@@ -3,9 +3,8 @@ import image from '../../../assets/slide.png'
 
 const Slide = () => {
     return (
-        <div className="slide">
-
-            <div style={{backgroundColor: "#F4EFE9"}} className="part">
+        <div style={{backgroundColor: "#F4EFE9"}} className="slide">
+            <div className="part">
                 <h2>
                     Stan Smith,<br/>Forever
                 </h2>

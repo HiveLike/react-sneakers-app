@@ -1,6 +1,4 @@
-import { children } from "react";
-
-const Slider = (children) => {
+const Slider = ({children}) => {
     return (
         <section className="slider">
             <div className="wrapper">
