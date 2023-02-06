@@ -8,10 +8,10 @@ const Slider = ({children}) => {
                 
                 <div className="controls">
                     <button className="prev">
-                        <i class="fa-solid fa-chevron-left"></i>
+                        <i className="fa-solid fa-chevron-left"></i>
                     </button>
                     <button className="next">
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i className="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
             </div>

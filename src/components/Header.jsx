@@ -4,7 +4,7 @@ import logo from "../assets/logo.svg";
 const CartButton = () => {
     return (
         <button>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i className="fa-solid fa-cart-shopping"></i>
             <span>1204 руб.</span>
         </button>
     )
@@ -13,22 +13,25 @@ const CartButton = () => {
 const Header = () => {
     return (
         <header className="header">
-            <div className="logo">
-                <img src={logo} alt="React Snaeakers logo" />
 
-                <div>
-                    <h1>React Sneakers</h1>
-                    <p>Магазин лучших кроссовок</p>
+            <NavLink className="logo__link" to="/">
+                <div className="logo">
+                    <img src={logo} alt="React Snaeakers logo" />
+
+                    <div>
+                        <h1>React Sneakers</h1>
+                        <p>Магазин лучших кроссовок</p>
+                    </div>
                 </div>
-            </div>
+            </NavLink>
 
             <div className="nav">
                 <CartButton />
                 <NavLink to="/favorites">
-                    <i class="fa-solid fa-heart"></i>
+                    <i className="fa-solid fa-heart"></i>
                 </NavLink>
                 <NavLink to="/orders">
-                    <i class="fa-solid fa-user"></i>
+                    <i className="fa-solid fa-user"></i>
                 </NavLink>
             </div>
         </header>
