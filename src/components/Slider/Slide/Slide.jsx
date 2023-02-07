@@ -1,20 +1,27 @@
 import { NavLink } from "react-router-dom";
-import image from '../../../assets/slide.png'
 
-const Slide = () => {
+const Slide = ({slide}) => {
+    console.log(slide);
     return (
-        <div style={{backgroundColor: "#F4EFE9"}} className="slide">
+        <div style={{background: slide.background}} className="slide">
             <div className="part">
                 <h2>
-                    Stan Smith,<br/>Forever
+                    {slide.title}
                 </h2>
 
-                <NavLink className="button button--xl" to="/">
-                    Купить
+                <NavLink className="button button--xl" to={slide.button.url}>
+                    {slide.button.text}
                 </NavLink>
             </div>
 
-            <img src={image} alt="React Sneakers" />
+            <img 
+            src={slide.banner} 
+            alt={slide.title} 
+            height={400}
+            style={{
+                maxHeight:400
+            }}
+            />
 
         </div>
     );
