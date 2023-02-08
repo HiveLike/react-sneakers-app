@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import StorageService from "../services/storageService";
 
 const useCart= (initialValue, key = "cart") => {
     const[cartItems, setCartItems] = useState(initialValue);
 
-    const addToCart = (item) => setCartItems((prev) => [...prev]);
+    const addToCart = (item) => setCartItems((prev) => [...prev, {...item, id: Date.now()}]);
     const removeCartItemById = (id) => setCartItems((prev) => {
         prev = [...prev];
 
@@ -11,6 +12,16 @@ const useCart= (initialValue, key = "cart") => {
 
         return prev;
     });
+
+    useEffect(() => {
+        if(!StorageService.isNull(key)){
+            setCartItems(StorageService.get(key));
+        }
+    }, []);
+
+    useEffect(() => {
+        StorageService.set(key, cartItems);
+    }, [cartItems.length]);
 
     return {
         cartItems,
