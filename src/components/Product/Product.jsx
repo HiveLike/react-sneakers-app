@@ -1,17 +1,20 @@
 import { useContext } from "react";
-import { CartContext } from "../../pages/Root";
+
+import { CartContext, FavoritesContext } from "../../pages/Root";
+
 import formatMoney from "../../utils/formatMoney";
 import { HeartIcon, PlusIcon } from "../Icons/Icons";
 
 
 const Product = ({product}) => {
 
-    const {addToCart} = useContext(CartContext)
+    const {addToFavorite} = useContext(FavoritesContext);
+    const {addToCart} = useContext(CartContext);
 
     return (
         <div className="product">
         <div className="product__action">
-            <button>
+            <button onClick={addToFavorite.bind(this, product)}>
                 <HeartIcon size={18}/>
             </button>
         </div>
